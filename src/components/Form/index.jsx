@@ -4,10 +4,10 @@ import { Wrapper, Title, Input, Textarea, BtnWrapp, Button } from './styles';
 
 export const FormPost = ({ savePost, updatePost, onClose, post }) => {
   const [state, setState] = useState({
-    title: post.title ? post.title : '',
-    body: post.body ? post.body : '',
+    title: post ? post.title : '',
+    body: post ? post.body : '',
   });
-  console.log('Post', post);
+
   const onChange = (e) => {
     setState((prevState) => ({
       ...prevState,

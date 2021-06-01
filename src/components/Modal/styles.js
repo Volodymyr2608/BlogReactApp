@@ -19,10 +19,6 @@ export const Content = styled.div`
   padding: 20px;
   box-sizing: border-box;
   width: 600px;
-  /*   min-height: 100px;
-  min-width: 100px;
-  max-height: 80%;
-  max-width: 80%; */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   background-color: #fff;
   border-radius: 5px;

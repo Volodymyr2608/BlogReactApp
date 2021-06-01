@@ -9,7 +9,7 @@ import { Modal } from '../../components/Modal';
 import { FormPost } from '../../components/Form';
 import Header from '../../components/Header';
 
-import { AddPost } from './styles';
+import { AddPost, Wrapper } from './styles';
 
 const Posts = ({ isFetching, fetchPostsAction, createAssetAction, posts }) => {
   const [openCreateModal, setOpenCreateModal] = useState(false);
@@ -22,13 +22,16 @@ const Posts = ({ isFetching, fetchPostsAction, createAssetAction, posts }) => {
   useEffect(() => {
     fetchPostsAction();
   }, []);
+
   if (isFetching) {
     return <h1>Loading...</h1>;
   }
   return (
     <>
       <Header />
-      {posts ? <PostsList posts={posts} /> : <div>There are no posts</div>}
+      <Wrapper>
+        {posts ? <PostsList posts={posts} /> : <div>There are no posts</div>}
+      </Wrapper>
       <AddPost onClick={addPost}>
         <svg
           version="1.1"

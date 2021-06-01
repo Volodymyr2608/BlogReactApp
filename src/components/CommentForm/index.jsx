@@ -22,7 +22,7 @@ const CommentForm = ({ createCommentAction, getPostAction, postId }) => {
     e.preventDefault();
     createCommentAction({
       ...state,
-      postId,
+      postId: +postId,
     });
     getPostAction(
       { id: postId },
@@ -38,7 +38,7 @@ const CommentForm = ({ createCommentAction, getPostAction, postId }) => {
     <>
       <Wrapper>
         <Textarea
-          placeholder="Description"
+          placeholder="Write Your comment"
           name="body"
           value={state.body}
           onChange={onChange}

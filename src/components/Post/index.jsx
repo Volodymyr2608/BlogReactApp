@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { actions as postActions } from '../../resources/posts';
+
 import { Modal } from '../Modal';
 import { FormPost } from '../Form';
 import { FormConfirm } from '../FormConfirm';
-
-import { actions as postActions } from '../../resources/posts';
 
 import { Wrapper, Title, Body, Header, WrappBtn, Icon } from './styles';
 
@@ -82,13 +82,9 @@ const Post = ({
 };
 
 export default connect(
-  (state) => {
-    console.log(state);
-    return {
-      isFetching: state.posts.isFetching,
-      posts: state.posts.items,
-    };
-  },
+  (state) => ({
+    isFetching: state.posts.isFetching,
+  }),
   {
     fetchPostsAction: postActions.fetchPosts,
     updatePostAction: postActions.updatePost,

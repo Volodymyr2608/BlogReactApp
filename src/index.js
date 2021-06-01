@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import 'whatwg-fetch';
 import { Provider } from 'react-redux';
 import { configureStore } from './redux/store';
+
 import Routes from './routes';
 
-import { GlobalStyle, Wrapper } from './globalStyles';
+import { GlobalStyle } from './globalStyles';
 
 const store = configureStore();
 
@@ -13,9 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <GlobalStyle />
-      <Wrapper>
-        <Routes />
-      </Wrapper>
+      <Routes />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

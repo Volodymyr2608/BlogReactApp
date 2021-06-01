@@ -9,7 +9,7 @@ import Header from '../../components/Header';
 import CommentForm from '../../components/CommentForm';
 import CommentList from '../../components/CommentList';
 
-import { Title, Body } from './styles';
+import { Wrapper, Title, Body } from './styles';
 
 const Posts = ({ getPostAction, post }) => {
   const { id } = useParams();
@@ -32,10 +32,12 @@ const Posts = ({ getPostAction, post }) => {
   return (
     <>
       <Header />
-      <Title>{post.title}</Title>
-      <Body>{post.body}</Body>
-      <CommentForm postId={id} />
-      <CommentList comments={post.comments} />
+      <Wrapper>
+        <Title>{post.title}</Title>
+        <Body>{post.body}</Body>
+        <CommentForm postId={id} />
+        <CommentList comments={post.comments} />
+      </Wrapper>
     </>
   );
 };

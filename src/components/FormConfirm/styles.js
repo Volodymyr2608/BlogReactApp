@@ -44,6 +44,7 @@ export const Button = styled.button`
       }
     `}
 `;
+
 export const BtnWrapp = styled.div`
   display: flex;
   justify-content: center;
